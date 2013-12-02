@@ -1,0 +1,18 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-c-ares"
+VERSION=1.10.0
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Asynchronous DNS resolver library for Win64 toolchain"
+DESCRIPTION="c-ares is a C library for asynchronous DNS requests (including
+name resolves)."
+HOMEPAGE="http://c-ares.haxx.se/"
+SRC_URI="http://c-ares.haxx.se/download/c-ares-${VERSION}.tar.gz"
+SRC_DIR="c-ares-${VERSION}"
+
+DIFF_EXCLUDES="ares_build.h libtool.m4 lt*.*"
+
+CYGCONF_ARGS="--enable-debug --enable-optimize"
+MAKEOPTS+=" man_MANS= "
